@@ -2,19 +2,65 @@
 
 
 ; (7,6)
-; .......
-; .......
-; .......
-; .......
-; .......
-; .......
+; _______
+; _______
+; _______
+; _______
+; _______
+; _______
+
+;(setf red-piece   "O")
+;(setf black-piece "@")
+
+;example "move" data:
+; gameboard (7,6) looks like:
+; _______
+; _______
+; _______
+; _______
+; _____@_
+; ___@OO@
+; 
+; we want to put it on top of the O and we're red, so
+; (O 4 1 gameboard)
+;
+
+(setf test-gameboard 
+(list "_" "_" "_" "_" "_" "_" "_"))
+
+(setf empty-square "_")
+(setf red-piece    "O")
+(setf black-piece  "@")
+
+(setf board-height 6)
+(setf board-width  7)
+(setf win-length   4)
+
+(setf gameboard 
+      (make-array (list board-height board-width))
+)
+
+(defun valid-move (gameboard move)
+"definitely does something. maybe."
+(`code-typy-here)
+)
+
+(defun move (gameboard )
+"makes a move i think"
+(`does-some-code)
+)
+
+(defun has-won (gameboard &optional win-length red-piece black-piece)
+"does things"
+('code-go-here)
+
+)
 
 
-(defconstant board-height 6)
-(defconstant board-width 7)
+(defun how-do-i-make-a-function (args) 
+  "documentation. also help."
+  (list `heeeelp args))
 
-(defconstant win-length 4)
-(setf gamerow (make-array board-width))
-
-
-(setf gameboard (make-array board-width))
+(defun multiply-by-seven (number)
+  "Multiply NUMBER by seven."
+  (* 7 number))
