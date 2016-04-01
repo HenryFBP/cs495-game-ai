@@ -26,7 +26,15 @@
 ;
 
 (setf test-gameboard 
-(list "_" "_" "_" "_" "_" "_" "_"))
+      (list 
+       (list empty-square empty-square empty-square empty-square empty-square empty-square empty-square )
+       (list empty-square empty-square empty-square empty-square empty-square empty-square empty-square )
+       (list empty-square empty-square empty-square empty-square empty-square empty-square empty-square )
+       (list empty-square empty-square empty-square empty-square empty-square empty-square empty-square )
+       (list empty-square empty-square empty-square empty-square empty-square black-piece  empty-square )
+       (list empty-square empty-square empty-square black-piece  red-piece    red-piece    black-piece  )
+      )
+)
 
 (setf empty-square "_")
 (setf red-piece    "O")
