@@ -20,32 +20,41 @@
 ; _______
 ; _____@_
 ; ___@OO@
-; 
+;
 ; we want to put it on top of the O and we're red, so
 ; (O 4 1 gameboard)
 ;
 
-(setf test-gameboard 
-      (list 
-       (list empty-square empty-square empty-square empty-square empty-square empty-square empty-square )
-       (list empty-square empty-square empty-square empty-square empty-square empty-square empty-square )
-       (list empty-square empty-square empty-square empty-square empty-square empty-square empty-square )
-       (list empty-square empty-square empty-square empty-square empty-square empty-square empty-square )
-       (list empty-square empty-square empty-square empty-square empty-square black-piece  empty-square )
-       (list empty-square empty-square empty-square black-piece  red-piece    red-piece    black-piece  )
-      )
-)
 
-(setf empty-square "_")
-(setf red-piece    "O")
-(setf black-piece  "@")
+
+(setf empty-square '_)
+(setf red-piece    'O)
+(setf black-piece  '@)
 
 (setf board-height 6)
 (setf board-width  7)
 (setf win-length   4)
 
-(setf gameboard 
-      (make-array (list board-height board-width))
+
+
+(setf test-gameboard
+       (list
+	(list empty-square empty-square empty-square empty-square empty-square empty-square empty-square )
+	(list empty-square empty-square empty-square empty-square empty-square empty-square empty-square )
+	(list empty-square empty-square empty-square empty-square empty-square empty-square empty-square )
+	(list empty-square empty-square empty-square empty-square empty-square empty-square empty-square )
+	(list empty-square empty-square empty-square empty-square empty-square black-piece  empty-square )
+	(list empty-square empty-square empty-square black-piece  red-piece    red-piece    black-piece  )
+      )
+)
+
+
+(setf gameboard
+      (make-array (list board-height board-width)))
+
+(defun piece-at (x y gameboard)
+"Returns the piece at x,y on gameboard."
+(aref gameboard (- x 1) (- y 1))
 )
 
 (defun valid-move (gameboard move)
@@ -65,7 +74,7 @@
 )
 
 
-(defun how-do-i-make-a-function (args) 
+(defun how-do-i-make-a-function (args)
   "documentation. also help."
   (list `heeeelp args))
 
