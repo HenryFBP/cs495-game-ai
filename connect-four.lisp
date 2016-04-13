@@ -1,7 +1,9 @@
 ; Henry Post
 
 ;helper functions for converting data
-(load "helper-fns")
+(load "/helper-fns")
+
+;(load "\helper-fns.lisp")
 
 
 ; (7,6)
@@ -30,39 +32,57 @@
 
 
 
-(setf empty-square '_)
-(setf red-piece    'O)
-(setf black-piece  '@)
+(defconstant empty-square '_)
+(defconstant red-piece    'O)
+(defconstant black-piece  '@)
+(defconstant ayy-lmao     '$)
 
-(setf board-height 6)
-(setf board-width  7)
-(setf win-length   4)
+(defconstant board-height 6)
+(defconstant board-width  7)
+(defconstant win-length   4)
 
 
 ; dis not a array, make it an array.......
-(setf test-gameboard
+(defconstant test-gameboard
        (list
+	(list ayy-lmao     black-piece  empty-square empty-square empty-square empty-square empty-square )
 	(list empty-square empty-square empty-square empty-square empty-square empty-square empty-square )
 	(list empty-square empty-square empty-square empty-square empty-square empty-square empty-square )
-	(list empty-square empty-square empty-square empty-square empty-square empty-square empty-square )
-	(list empty-square empty-square empty-square empty-square empty-square empty-square empty-square )
+	(list empty-square empty-square ayy-lmao     empty-square empty-square empty-square empty-square )
 	(list empty-square empty-square empty-square empty-square empty-square black-piece  empty-square )
 	(list empty-square empty-square empty-square black-piece  red-piece    red-piece    black-piece  )
       )
 )
 
-(setf test-gameboard (list-to-array test-gameboard 2))
+(defconstant test-gameboard (list-to-array test-gameboard 2))
 
-(setf gameboard
+(defconstant gameboard
       (make-array (list board-height board-width)))
 
 (defun piece-at (x y gameboard)
 "Returns the piece at x,y on gameboard."
-(aref gameboard (- x 1) (- y 1))
+(aref gameboard (- y 1) (- x 1))
 )
 
+(defun row-empty (gameboard col)
+"Returns TRUE if the column COL is empty on gameboard GAMEBOARD."
+('some-code-i-think)
+)
+
+(defun col-empty (gameboard row)
+"Returns TRUE if the row ROW is empty on gameboard GAMEBOARD."
+('code-probs)
+)
+
+(defun pieces (gameboard piece)
+"Returns a NUMBER of pieces (of type PIECE) on gameboard GAMEBOARD."
+('ayy-lmao)
+)
+
+
+
 (defun valid-move (gameboard move)
-"definitely does something. maybe."
+"Given a gameboard and proposed move (of form (X Y PIECE)) returns T/F if it is a valid move."
 (`code-typy-here)
 )
 
@@ -83,5 +103,5 @@
   (list `heeeelp args))
 
 (defun multiply-by-seven (number)
-  "Multiply NUMBER by seven."
+"Multiply NUMBER by seven."
   (* 7 number))
