@@ -1,5 +1,8 @@
 ; Henry Post
 
+;helper functions for converting data
+(load "helper-fns")
+
 
 ; (7,6)
 ; _______
@@ -36,7 +39,7 @@
 (setf win-length   4)
 
 
-
+; dis not a array, make it an array.......
 (setf test-gameboard
        (list
 	(list empty-square empty-square empty-square empty-square empty-square empty-square empty-square )
@@ -48,6 +51,7 @@
       )
 )
 
+(setf test-gameboard (list-to-array test-gameboard 2))
 
 (setf gameboard
       (make-array (list board-height board-width)))
